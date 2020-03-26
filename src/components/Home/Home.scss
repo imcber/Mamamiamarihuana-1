@@ -1,0 +1,53 @@
+.MuiContainer-root {
+  padding: 0 !important;
+}
+
+.home-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-image: url("../../assets/images/waves_black.jpg");
+  background-size: cover;
+
+  &__text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      font-size: 100px;
+      font-family: "Archia";
+      text-align: center;
+    }
+  }
+
+  &__img-container {
+    float: right;
+  }
+
+  &__typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    border-right: 0.15em solid #fdfdfd;
+    animation: typing 4s steps(32, end), blink-caret 1.2s step-end infinite;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fdfdfd;
+  }
+}

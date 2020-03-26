@@ -1,0 +1,55 @@
+.header {
+  position: fixed;
+  width: 100%;
+
+  /*Container objects header*/
+  &-container {
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-between;
+    /*Style fot all text inside header*/
+    &__text {
+      font-family: "Raleway", sans-serif;
+      margin: 3px;
+      font-size: 18px;
+    }
+
+    /*Info header container*/
+    &__info {
+      margin-left: 15px;
+      &__title-board {
+        background-image: url("../../assets/images/board.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        height: 200px;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #141414;
+      }
+
+      span {
+        writing-mode: vertical-lr;
+        letter-spacing: 2.5px;
+        cursor: pointer;
+        transition: all 1s linear;
+      }
+
+      span:hover {
+        color: #dbdbdb;
+      }
+    }
+
+    /*Change lenguage container */
+    &__lg {
+      text-align: center;
+      span {
+        padding-right: 20px;
+      }
+      .lengu {
+        cursor: pointer;
+      }
+    }
+  }
+}
