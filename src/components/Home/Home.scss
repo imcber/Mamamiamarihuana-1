@@ -9,35 +9,6 @@
   background-image: url("../../assets/images/waves_black.jpg");
   background-size: cover;
   flex-direction: column;
-  &__text-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 5em;
-
-    span {
-      font-size: 100px;
-      font-family: "Archia";
-      text-align: center;
-    }
-  }
-
-  &__img-container {
-    float: right;
-  }
-
-  &__typewriter {
-    overflow: hidden;
-    white-space: nowrap;
-    margin: 0 auto;
-    border-right: 0.15em solid #fdfdfd;
-    animation: typing 4s steps(32, end), blink-caret 1.2s step-end infinite;
-  }
-
-  &__info-aux {
-    font-size: 30px !important;
-    animation: 8s ap-dis-pear infinite alternate-reverse both;
-  }
 }
 
 @keyframes typing {
