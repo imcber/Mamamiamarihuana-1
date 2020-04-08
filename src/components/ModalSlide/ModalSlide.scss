@@ -1,0 +1,39 @@
+.ModalSlide {
+  height: 100vh;
+  width: 100%;
+  background-color: #a5a5a58c;
+  position: fixed;
+  left: 100%;
+  display: flex;
+  transition: all 200ms linear;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
+
+  &__hover-show {
+    left: 90% !important;
+  }
+
+  &__open {
+    animation: slide-left 1s both;
+    > .reverse-md {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%) !important;
+      background-color: #ffffff00;
+    }
+  }
+
+  > .reverse-md {
+    clip-path: polygon(0% 0%, 0% 0%, 20% 100%, 0% 100%);
+  }
+
+  &__container {
+    height: 100%;
+    width: 50%;
+    background-color: #1f1f1f;
+  }
+}
+
+@keyframes slide-left {
+  100% {
+    left: 0;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}

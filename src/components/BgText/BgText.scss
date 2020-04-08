@@ -17,10 +17,39 @@
     margin: 0 auto;
     border-right: 0.15em solid #fdfdfd;
     animation: typing 4s steps(32, end), blink-caret 1.2s step-end infinite;
+    cursor: pointer;
   }
 
   &__info-aux {
     font-size: 30px !important;
     animation: 8s ap-dis-pear infinite alternate-reverse both;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fdfdfd;
+  }
+}
+
+@keyframes ap-dis-pear {
+  0% {
+    color: #ffffff7c;
+  }
+  100% {
+    color: #ffffff00;
   }
 }

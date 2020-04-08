@@ -10,31 +10,3 @@
   background-size: cover;
   flex-direction: column;
 }
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #fdfdfd;
-  }
-}
-
-@keyframes ap-dis-pear {
-  0% {
-    color: #ffffff7c;
-  }
-  100% {
-    color: #ffffff00;
-  }
-}
