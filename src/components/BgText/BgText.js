@@ -15,7 +15,11 @@ const BgText = () => {
 
   return (
     <>
-      <ModalSlide hoverOn={hoverOnText} showModal={openModal} />
+      <ModalSlide
+        hoverOn={hoverOnText}
+        showModal={openModal}
+        closeModal={() => setOpenModal(false)}
+      />
       <div className="bgText-container">
         <TextDisplay
           classSpan="typewriter"
