@@ -10,9 +10,9 @@ const ModalSlide = (props) => {
 
   return (
     <div className={classNameModal}>
-      <div className="ModalSlide__container"></div>
+      <div className="ModalSlide__container reverse-l"></div>
       <div
-        className="ModalSlide__container reverse-md"
+        className="ModalSlide__container reverse-r"
         onClick={closeModal}
       ></div>
     </div>

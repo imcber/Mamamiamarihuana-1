@@ -12,24 +12,22 @@
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
   }
 
-  &__open {
-    left: 0%;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    > .reverse-md {
-      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%) !important;
-      background-color: #ffffff00;
-    }
-  }
-
   &__close {
     animation: slide-rigth 1s both;
-    > .reverse-md {
-      clip-path: polygon(0% 0%, 100% 0%, 35% 100%, 0% 100%) !important;
+    > .reverse-r {
+      background-color: #ffffff00;
+      animation: slide-rigth-reverse 1s both;
     }
   }
 
-  > .reverse-md {
-    clip-path: polygon(0% 0%, 0% 0%, 20% 100%, 0% 100%);
+  &__open {
+    animation: slide-left 1.4s both;
+    > .reverse-l {
+      animation: slide-left-reverse 1.4s both;
+    }
+    > .reverse-r {
+      background-color: #ffffff00;
+    }
   }
 
   &__container {
@@ -39,15 +37,47 @@
   }
 }
 
-@keyframes slide-rigth {
+@keyframes slide-left {
+  0% {
+    left: 90%;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
+  }
   100% {
-    right: 0;
+    left: 0%;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
 }
 
-@keyframes slide-left {
+@keyframes slide-left-reverse {
+  0% {
+    clip-path: polygon(0% 0%, 70% 0%, 100% 100%, 0% 100%);
+  }
   100% {
-    left: 0;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes slide-rigth {
+  0% {
+    left: 0%;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  30% {
+    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  100% {
+    left: 100%;
+    clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 10% 100%);
+  }
+}
+
+@keyframes slide-rigth-reverse {
+  0% {
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+    background-color: #1f1f1f;
+  }
+  20% {
+    clip-path: polygon(0% 0%, 30% 0%, 0% 100%, 0% 100%);
+    background-color: #1f1f1f;
   }
 }
