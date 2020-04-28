@@ -8,6 +8,8 @@ const ModalSlide = (props) => {
     showModal ? "open" : hoverOn ? "hover-show" : "close"
   }`;
 
+  classNameModal = `ModalSlide ModalSlide__${hoverOn}`;
+
   return (
     <div className={classNameModal}>
       <div className="ModalSlide__container reverse-l"></div>

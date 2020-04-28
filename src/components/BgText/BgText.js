@@ -4,8 +4,9 @@ import "./BgText.scss";
 
 const BgText = () => {
   const [firstMove, setFirstMove] = useState(false);
-  const [hoverOnText, sethoverOnText] = useState(false);
+  const [hoverOnText, sethoverOnText] = useState("");
   const [openModal, setOpenModal] = useState(false);
+  const [strClassOpenModal, setstrClassOpenModal] = useState("");
   /*useEffect(() => {
     document.addEventListener("keydown", handlerFirstMove, false);
     return () => {
@@ -13,6 +14,21 @@ const BgText = () => {
     }; sethoverOnText(!hoverOnText);
   });*/
 
+  useEffect(() => {
+    const strClass = openModal ? "open" : "close";
+    sethoverOnText(strClass);
+  }, [openModal]);
+
+  const handlerHovertextBg = (evt) => {
+    if (!openModal) {
+      const strClass = evt.type === "mouseenter" ? "hover-show" : "";
+      sethoverOnText(strClass);
+    }
+  };
+
+  const handlerClicktextBg = (evt) => {
+    setOpenModal(!openModal);
+  };
   return (
     <>
       <ModalSlide
@@ -23,8 +39,9 @@ const BgText = () => {
       <div className="bgText-container">
         <TextDisplay
           classSpan="typewriter"
-          hoverFunction={() => sethoverOnText(!hoverOnText)}
-          clickHandler={() => setOpenModal(!openModal)}
+          hoverFunction={handlerHovertextBg}
+          clickHandler={handlerClicktextBg}
+          id="textBg"
         >
           ¿Cual es el valor de vivir?
         </TextDisplay>
