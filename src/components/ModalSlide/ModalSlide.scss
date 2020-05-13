@@ -24,13 +24,9 @@
   }
 
   &__close {
-    animation: slide-rigth 1s both;
-    .reverse-r {
-      background-color: #ffffff00;
-      animation: slide-rigth-reverse 1s both;
-    }
+    animation: slide-rigth 1.4s both;
     .reverse-l {
-      animation: slide-rigth-aux 1s both;
+      animation: slide-rigth-aux 1.4s both;
     }
   }
 
@@ -61,7 +57,6 @@
 
 @keyframes slide-left {
   0% {
-    left: 90%;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
   }
   100% {
