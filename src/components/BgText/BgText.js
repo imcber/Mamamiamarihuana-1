@@ -4,9 +4,12 @@ import "./BgText.scss";
 
 const BgText = () => {
   const [firstMove, setFirstMove] = useState(false);
+  //state para saber si entra o sale el mouse
   const [hoverOnText, sethoverOnText] = useState("");
+  //state para saber si esta activo el modal
   const [openModal, setOpenModal] = useState(false);
-  const [strClassOpenModal, setstrClassOpenModal] = useState("");
+
+  const [endTrans, setEndTrans] = useState(true);
   /*useEffect(() => {
     document.addEventListener("keydown", handlerFirstMove, false);
     return () => {
@@ -17,6 +20,9 @@ const BgText = () => {
   useEffect(() => {
     const strClass = openModal ? "open" : "close";
     sethoverOnText(strClass);
+    setTimeout(() => {
+      setEndTrans(!openModal ? true : false);
+    }, 1100);
   }, [openModal]);
 
   const handlerHovertextBg = (evt) => {
@@ -33,17 +39,16 @@ const BgText = () => {
     <>
       <ModalSlide
         hoverOn={hoverOnText}
-        showModal={openModal}
         closeModal={() => setOpenModal(false)}
-      />
+      ></ModalSlide>
       <div className="bgText-container">
         <TextDisplay
           classSpan="typewriter"
-          hoverFunction={handlerHovertextBg}
+          hoverFunction={endTrans ? handlerHovertextBg : null}
           clickHandler={handlerClicktextBg}
           id="textBg"
         >
-          ¿Cual es el valor de vivir?
+          WRITE SOMETHING GREAT
         </TextDisplay>
         <TextDisplay classSpan="info-aux">
           Presiona cualquier tecla...

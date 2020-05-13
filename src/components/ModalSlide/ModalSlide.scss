@@ -1,22 +1,36 @@
 .ModalSlide {
   height: 100vh;
   width: 100%;
-  background-color: #a5a5a58c;
+  //background-color: #a5a5a58c;
   position: fixed;
   left: 100%;
   display: flex;
   transition: all 300ms linear;
+  font-family: "Archia";
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
+
+  .text-modal {
+    transition: all 200ms linear;
+    opacity: 0;
+  }
 
   &__hover-show {
     left: 90% !important;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
+  }
+
+  .prof-image {
+    transition: all 200ms linear;
+    transform: translateY(-70vh);
   }
 
   &__close {
     animation: slide-rigth 1s both;
-    > .reverse-r {
+    .reverse-r {
       background-color: #ffffff00;
       animation: slide-rigth-reverse 1s both;
+    }
+    .reverse-l {
+      animation: slide-rigth-aux 1s both;
     }
   }
 
@@ -24,16 +38,24 @@
     animation: slide-left 1.4s both;
     > .reverse-l {
       animation: slide-left-reverse 1.4s both;
+      > div > .text-modal {
+        transition: all 1.4s linear;
+        opacity: 1;
+      }
     }
     > .reverse-r {
       background-color: #ffffff00;
+    }
+    .prof-image {
+      transform: translateY(0vh);
+      transition: all 1.3s linear;
     }
   }
 
   &__container {
     height: 100%;
     width: 50%;
-    background-color: #1f1f1f;
+    background-color: #f6cde1;
   }
 }
 
@@ -62,22 +84,43 @@
     left: 0%;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
-  30% {
-    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
-  }
   100% {
     left: 100%;
-    clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 10% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
 }
 
 @keyframes slide-rigth-reverse {
   0% {
     clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
-    background-color: #1f1f1f;
+    background-color: #f6cde1;
   }
   20% {
-    clip-path: polygon(0% 0%, 30% 0%, 0% 100%, 0% 100%);
-    background-color: #1f1f1f;
+    //clip-path: polygon(0% 0%, 10% 0%, 0% 100%, 0% 100%);
+    // background-color: #f6cde1;
+  }
+}
+
+@keyframes slide-rigth-aux {
+  0% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    //background-color: #f6cde1;
+  }
+  20% {
+    clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+    // background-color: #f6cde1;
+  }
+  100% {
+    clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+    // background-color: #f6cde1;
+  }
+}
+
+@keyframes slide-up-down {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: -20px;
   }
 }
